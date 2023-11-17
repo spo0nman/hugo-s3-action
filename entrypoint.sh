@@ -1,7 +1,7 @@
 #!/bin/bash -l
 
 set -eo pipefail
-
+set -x
 # Check configuration
 
 err=0
