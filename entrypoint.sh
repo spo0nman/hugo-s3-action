@@ -48,15 +48,15 @@ hugo version || exit 1
 
 # Build
 if [ "$MINIFY" = "true" ]; then
-  cd /home/runner/work/fableable/fableable/fableable.com
+  cd fableable.com
   hugo --minify
 else
-  cd /home/runner/work/fableable/fableable/fableable.com
+  cd fableable.com
   hugo
 fi
 
 # Deploy as configured in your repo
-cd /home/runner/work/fableable/fableable/fableable.com
+cd fableable.com
 hugo deploy
 
 # Clear out credentials after we're done
