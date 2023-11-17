@@ -52,6 +52,8 @@ if [ "$MINIFY" = "true" ]; then
   hugo --minify
 else
   cd fableable.com
+  ls -lrt 
+  pwd
   hugo
 fi
 
