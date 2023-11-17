@@ -57,6 +57,7 @@ fi
 # Deploy as configured in your repo
 cd ${WORKDIR}
 pwd
+cd /home/runner/work/fableable/fableable/fableable.com
 hugo deploy
 
 # Clear out credentials after we're done
