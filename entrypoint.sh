@@ -46,19 +46,18 @@ mv hugo /usr/local/bin/
 cd .. && rm -rf tmp/
 hugo version || exit 1
 
+if [ "$WORKDIR" ]; then
+  cd $WORKDIR
+fi
+
 # Build
 if [ "$MINIFY" = "true" ]; then
-  cd fableable.com
   hugo --minify
 else
-  cd fableable.com
-  ls -lrt 
-  pwd
   hugo
 fi
 
 # Deploy as configured in your repo
-cd fableable.com
 hugo deploy
 
 # Clear out credentials after we're done
