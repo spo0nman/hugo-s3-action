@@ -25,6 +25,10 @@ if [ $err -eq 1 ]; then
   exit 1
 fi
 
+if [ -z "$WORKDIR" ]; then
+  echo "warn: WORKDIR is not set"
+fi
+
 # Create a dedicated profile for this action to avoid
 # conflicts with other actions
 aws configure --profile hugo-s3 <<-EOF > /dev/null 2>&1
@@ -51,6 +55,7 @@ else
 fi
 
 # Deploy as configured in your repo
+cd ${WORKDIR}
 hugo deploy
 
 # Clear out credentials after we're done
